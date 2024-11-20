@@ -2,21 +2,36 @@
 <html>
   <head>
     <title>js-variables</title>
+    <link rel="icon" href="user-pic.jpeg" />
   </head>
   <body>
     <script>
       let variable1 = 3;
       console.log(variable1);
 
-      let calculation = 4 + 5;
+      const calculation = 4 + 5;
       console.log(calculation);
       console.log(calculation + 3);
 
-      let result = calculation + 6;
+      const result = calculation + 6;
       console.log(result);
 
-      let msg = "hey,there";
+      const msg = "hey,there";
       console.log(msg);
+      console.log(";");
+
+      variable1 = "not three";
+      console.log(variable1 + 3);
+
+      variable1 = variable1 + "Var";
+      console.log(variable1);
+
+      const var2 = 11; //value remain constant
+      var var3 = 34; // we dont use var keyword in modern js
+
+      console.log(typeof 11);
+      console.log(typeof "not three");
+      console.log(typeof var3);
     </script>
   </body>
 </html>
