@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="png/jpg/img" href="user-pic.jpeg" />
+    <title>first</title>
+
+    <style>
+      #a1,
+      .a1 {
+        background-color: red;
+        color: yellow;
+        border: solid;
+        border-style: dotted;
+        border-width: 2px;
+        border-color: blue;
+        border-radius: 5px;
+        height: 30px;
+        width: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: box-shadow 0.15s, height 0.15s, width 0.15s;
+        &:hover {
+          box-shadow: inset darkblue 0 0 15px;
+          background: url(https://img.freepik.com/free-photo/portrait-intrigued-woman-cannot-wait-use-new-smartphone-holding-phone-pointing-cellphone_1258-232159.jpg?ga=GA1.1.1289493153.1726323871&semt=ais_hybrid);
+        }
+        &:active {
+          height: 60px;
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="a1"
+      onclick="
+        alert('good job!!');
+        console.log('excel there');
+        "
+    >
+      hello
+    </button>
+    <p>
+      paragraph of <button class="a1" title="good job">the</button> text
+      <button onclick="alert('hiiiiii'); alert('loll');">hi</button>
+    </p>
+
+    <script>
+      //this is comment
+      //alert('hello');
+      console.log(3 + 5);
+      console.log("orange" + "is" + "a" + "fruit");
+      console.log("i'm the best");
+      console.log(3 + 5);
+    </script>
+  </body>
+</html>
