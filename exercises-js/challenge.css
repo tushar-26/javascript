@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to right, gray, black);
+  height: 2000px;
+  border: solid 20px black;
+}
+
+button {
+  color: black;
+  font-family: times new roman;
+  font-weight: bold;
+  font-size: larger;
+  background-color: grey;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(229, 226, 226);
+  border-radius: 12px;
+  padding: 10px 20px 10px 20px;
+  margin: 5px 5px 5px 5px;
+  transition: opacity 0.15s;
+  cursor: pointer;
+  &:hover {
+    border-color: black;
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: #333;
+    padding: 12px 22px 12px 22px;
+  }
+}
+
+.main {
+  border: solid 10px black;
+  display: inline-block;
+  padding: 20px;
+  background-color: #333;
+}
+
+.calculation {
+  border: solid 20px gray;
+  display: inline-block;
+  margin: 20px 0px 0px 500px;
+}
+.name {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  color: beige;
+  background: linear-gradient(to right, rgb(10, 10, 14), grey);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  border: solid 10px black;
+}
