@@ -1,0 +1,39 @@
+order of operation in coding :
+
+Parentheses ()
+Override all other operations.
+
+Unary Operators
+Negation -, Logical NOT !, Increment ++, Decrement --.
+
+Exponents (if supported)
+e.g., ** in Python.
+
+Multiplication, Division, Modulus
+*, /, %.
+
+Addition and Subtraction
++, -.
+
+Relational Operators
+<, <=, >, >=.
+
+Equality Operators
+==, !=.
+
+Logical AND/OR
+&&, ||.
+
+Assignment Operators
+=, +=, -=, etc.
+------------------------------------------------------------------------
+Example in JavaScript:
+For 3 + 6 * (5 + 4) / 3 ** 2:
+
+Parentheses: 5 + 4 = 9
+Exponents: 3 ** 2 = 9
+Division: 9 / 9 = 1
+Multiplication: 6 * 1 = 6
+Addition: 3 + 6 = 9
+Result = 9.
+

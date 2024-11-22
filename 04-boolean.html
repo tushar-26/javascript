@@ -8,7 +8,7 @@
 
     console.log(typeof true);
 
-    console.log(5 < 7 - 7);
+    console.log(5 > 7 - 7);
     console.log(4 > 5);
 
     console.log(5 == "5.0");
@@ -19,8 +19,15 @@
       console.log("false");
     }
 
-    if (19 >= 60) {
+    let age = 7;
+    let citizen = true;
+
+    if (age <= 60 && age >= 18) {
       console.log("u can drive");
+    } else if (citizen == false || age <= 8) {
+      console.log("either u r not citizen or u r too young");
+    } else if (age <= 17 && age >= 9) {
+      console.log("u should drive cycle or e-vehicle");
     } else {
       console.log("u cant drive");
     }
