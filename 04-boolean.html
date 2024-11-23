@@ -5,37 +5,78 @@
   <script>
     true;
     false;
+    /*
+     console.log(typeof true);
 
-    console.log(typeof true);
+     console.log(5 > 7 - 7);
+     console.log(4 > 5);
 
-    console.log(5 > 7 - 7);
-    console.log(4 > 5);
+     console.log(5 == "5.0");
 
-    console.log(5 == "5.0");
+     if (true) {
+       console.log("true");
+     } else {
+       console.log("false");
+     }
 
-    if (true) {
-      console.log("true");
+     let age = 7;
+     let citizen = true;
+
+     if (age <= 60 && age >= 18) {
+       console.log("u can drive");
+     } else if (citizen == false || age <= 8) {
+       console.log("either u r not citizen or u r too young");
+     } else if (age <= 17 && age >= 9) {
+       console.log("u should drive cycle or e-vehicle");
+     } else {
+       console.log("u cant drive");
+     }
+
+     if (6 > 3 && 3 != 33) {
+       console.log("yessssoo");
+     } else {
+       console.log("noop");
+     }
+
+     console.log(0.2 >= 0 && 0.2 < 1 / 3);
+     console.log(!false);
+     
+
+    if (!0) {
+      console.log("truthy");
     } else {
-      console.log("false");
+      console.log("falsy");
     }
 
-    let age = 7;
-    let citizen = true;
+    const cartQuantity = 5;
 
-    if (age <= 60 && age >= 18) {
-      console.log("u can drive");
-    } else if (citizen == false || age <= 8) {
-      console.log("either u r not citizen or u r too young");
-    } else if (age <= 17 && age >= 9) {
-      console.log("u should drive cycle or e-vehicle");
-    } else {
-      console.log("u cant drive");
+    if (cartQuantity) {
+      console.log("cart has products");
     }
 
-    if (6 > 3 && 3 != 33) {
-      console.log("yessssoo");
-    } else {
-      console.log("noop");
-    }
+    console.log(!0);
+
+    console.log("tush" / 5); // this is NaN ( not a number)
+
+    let var1;
+    console.log(var1);
+
+    const var3 = undefined;
+    console.log(var3);
+    */
+
+    //const result = false ? "falsy" : "truthy";        // ? is ternary operator works like if and : works like else
+
+    let age = 61;
+    const result = age >= 18 && age <= 60 ? "u can drive" : "u cant drive";
+    console.log(result);
+
+    false && console.log("hi"); // this is guard operator just shorcut for if statement
+
+    const msg = 5 && "hello";
+    console.log(msg);
+
+    const currency = undefined || "USD"; //we can use or(||) operator to assign default value
+    console.log(currency);
   </script>
 </html>

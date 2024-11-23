@@ -15,7 +15,7 @@ Multiplication, Division, Modulus
 Addition and Subtraction
 +, -.
 
-Relational Operators
+Relational/comparision Operators  (Relational operators have a lower priority than arithmetic operators, and a higher priority than logical)operators
 <, <=, >, >=.
 
 Equality Operators
