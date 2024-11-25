@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>objects</title>
+  </head>
+  <body></body>
+  <script>
+    //object groups multiple values to-gether
+    const product = {
+      name: "shocks",
+      price: 300,
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = "pizza"; //to change the value of an objects
+    console.log(product.name);
+
+    product.newProperty = true;
+    console.log(product.newProperty);
+
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);
+
+    const army = {
+      cloth: "army dress",
+      weapons: "guns",
+      vehicle: "army truck",
+      secrets: "information",
+    };
+
+    console.log(army);
+    console.log(army.weapons);
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>functions</title>
+  </head>
+  <body></body>
+  <script>
+    // function let us to reuse code
+
+    /* function function1() {
+      console.log("thats a function");
+      console.log(3 + 4);
+    }
+    function1();*/
+
+    function calculateTax(cost, taxPercent = 3) {
+      console.log(cost * taxPercent);
+    }
+    calculateTax(2000, 0.1);
+    calculateTax(5000); //if we doesn't give value argument like this,it will take the default value from parameter.
+  </script>
+</html>

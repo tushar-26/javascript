@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>boolean and if exercises</title>
+  </head>
+  <body></body>
+  <script>
+    /* const hour = 24;
+    const name = "tushar";
+
+    if (hour >= 6 && hour <= 12) {
+      console.log(`Good morning ${name} 🌄`);
+    } else if (hour >= 13 && hour <= 17) {
+      console.log(`Good afternoon ${name} ☀️`);
+    } else {
+      console.log(`Good night ${name} 🌃`);
+    }
+
+
+    const age = 6;
+    const holiday = false;
+    // && has a higher priority than || so for
+    // this to work correctly, we need to add
+    // brackets () around the || check to make
+    // sure that it gets done first.
+
+    if ((age <= 6 || age >= 65) && !holiday) {
+      // !holiday is same as holiday === false
+      console.log("u r eligible for discount");
+    } else {
+      console.log("no discount");
+    }
+      */
+    const randomNum = Math.random();
+    let result = "";
+    if (randomNum < 0.5) {
+      result = "head";
+    } else {
+      result = "tail";
+    }
+    console.log(result);
+
+    const guess = "head";
+    if (guess === result) {
+      console.log("u win");
+    } else {
+      console.log("u lose");
+    }
+    alert(`you guess ${guess} and computer guess ${result}`);
+
+    /*const randomNum = Math.random();
+
+    const result = randomNum < 0.5 ? "heads" : "tails";
+    console.log(result);
+
+    const guess = "heads";
+    guess === result ? alert("you win") : alert("you lose");*/
+  </script>
+</html>
