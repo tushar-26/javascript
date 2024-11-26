@@ -45,6 +45,10 @@ button {
   border: solid 20px gray;
   display: inline-block;
   margin: 20px 0px 0px 500px;
+  &:hover {
+    border-radius: 50px;
+    transform: rotate(1000 deg);
+  }
 }
 .name {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -55,4 +59,12 @@ button {
   text-align: center;
   padding: 10px 0px 10px 0px;
   border: solid 10px black;
+}
+
+img {
+  width: 300px;
+  border-radius: 200px;
+  object-fit: contain;
+  float: right;
+  margin-top: 100px;
 }

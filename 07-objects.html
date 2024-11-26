@@ -6,7 +6,7 @@
   <body></body>
   <script>
     //object groups multiple values to-gether
-    const product = {
+    /*const product = {
       name: "shocks",
       price: 300,
     };
@@ -17,22 +17,50 @@
     product.name = "pizza"; //to change the value of an objects
     console.log(product.name);
 
-    product.newProperty = true;
+    product.newProperty = true; //add new value into object
     console.log(product.newProperty);
 
     console.log(product);
 
-    delete product.newProperty;
+    delete product.newProperty; //dlt the property from object
     console.log(product);
-
-    const army = {
-      cloth: "army dress",
-      weapons: "guns",
-      vehicle: "army truck",
-      secrets: "information",
+    */
+    const product2 = {
+      name: "shirt",
+      ["delivery-time"]: "1PM",
+      rating: {
+        stars: 5,
+        count: 45,
+      },
+      fun: function fun1() {
+        console.log("funciton inside a object");
+      },
     };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2["name"]); //better way to print the property of object
+    console.log(product2["delivery-time"]);
 
-    console.log(army);
-    console.log(army.weapons);
+    product2["delivery-time"] = "2PM"; //changed
+    product2["report"] = "invoice"; //added
+
+    console.log(product2);
+    console.log(product2["rating"]);
+    console.log(product2["rating"]["stars"]); //to access nested object
+    product2["fun"](); //to call the function inside object
+    // product2.fun();
+
+    console["log"]("hi"); //look console is also a object and a log is function that runs code
+    console.log(typeof console);
+    console.log(typeof console.log);
+
+    console.log(typeof product2);
+    console.log(typeof product2.fun);
+
+    console.log(JSON.stringify(product2)); //to convert object to string
+
+    const jsonString = JSON.stringify(product2);
+
+    console.log(JSON.parse(jsonString)); //convert json to object
   </script>
 </html>
