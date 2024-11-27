@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object practise</title>
+  </head>
+  <body>
+    <button
+      onclick="
+       playGame('heads');
+      "
+    >
+      head
+    </button>
+
+    <button
+      onclick="
+      playGame('tails');
+    "
+    >
+      tail
+    </button>
+
+    <script>
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      }
+
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      const product = {
+        name: "fatball",
+        price: 2095,
+        ["delivery-time"]: "3days",
+      };
+      console.log(product);
+      product.price += 500;
+      console.log(product);
+      console.log(product["delivery-time"]);
+
+      const product2 = {
+        name: "shocks",
+        price: 1000,
+      };
+
+      const product3 = {
+        name: "shocks",
+        price: 1000,
+      };
+
+      console.log(comparePrice(product, product2));
+      console.log(isSameProduct(product2, product3));
+
+      console.log("GOOD AFTERNOON".toLowerCase());
+      console.log("string ".repeat(4));
+
+      //-----------------------------------------------------
+      /*let guessScore = {
+        wins: 0,
+        lose: 0,
+      };*/
+
+      const guessScore = JSON.parse(localStorage.getItem("guessScore")) || {
+        wins: 0,
+        lose: 0,
+      };
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? "heads" : "tails";
+
+        console.log(guess === result ? "You win!" : "You lose!");
+
+        if (guess === result) {
+          guessScore.wins++;
+        } else {
+          guessScore.lose++;
+        }
+
+        console.log(guessScore);
+
+        localStorage.setItem("guessScore", JSON.stringify(guessScore));
+      }
+    </script>
+  </body>
+</html>

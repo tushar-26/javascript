@@ -33,13 +33,34 @@
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
+    
     "
     >
       reset score
     </button>
 
     <script>
-      const score = JSON.parse(localStorage.getItem("score"));
+      /*const score = {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };*/
+
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };
+
+      /*if (!score) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+          };
+          }*/
+
+      //console.log(JSON.parse(localStorage.getItem("score")));
 
       function playGame(playerMove) {
         const computerMove = pickComputermove();
@@ -80,7 +101,8 @@
           score.ties += 1;
         }
 
-        localStorage.setItem("score", JSON.stringify(score));
+        localStorage.setItem("score", JSON.stringify(score)); //local storage only support strings
+        // console.log(localStorage.getItem("message","hi there"));
 
         alert(
           `you picked ${playerMove}. computer picked ${computerMove}. ${result}

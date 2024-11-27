@@ -25,6 +25,8 @@
     delete product.newProperty; //dlt the property from object
     console.log(product);
     */
+
+    /*
     const product2 = {
       name: "shirt",
       ["delivery-time"]: "1PM",
@@ -57,10 +59,65 @@
     console.log(typeof product2);
     console.log(typeof product2.fun);
 
-    console.log(JSON.stringify(product2)); //to convert object to string
+    console.log(typeof JSON.stringify(product2)); //to convert object to json(string)
 
     const jsonString = JSON.stringify(product2);
 
-    console.log(JSON.parse(jsonString)); //convert json to object
+    console.log(JSON.parse(jsonString)); //convert json to object by variable(better to use variabe)
+    //console.log(JSON.parse(JSON.stringify(product2)));   //convert json to object
+    */
+
+    console.log("hello".length); //other values(like strings in console.log also has their properties like length etc this is called javascript auto-boxing. auto-boxing doesnt work with null and undefined)
+    console.log("hello".toUpperCase());
+
+    const obj1 = {
+      msg: "good-day",
+    };
+
+    const obj2 = obj1;
+
+    obj1.msg = "goodnight";
+    console.log(obj1); //const dont let us to change the value of variable but we can change the value of property of object
+    console.log(obj2); //obj2 also changed because obj2 is reference of obj1
+
+    const obj3 = {
+      msg: "goodnight",
+    };
+
+    if (obj1 === obj3) {
+      console.log("obj1 and obj3 are same");
+    } else {
+      console.log("obj1 and obj3 are not same");
+    }
+
+    console.log(obj1 === obj3); //objects r references thats why obj1 and obj3 has same value but still it return false
+    console.log(obj1 === obj2); //obj1 and obj2 has same reference thats why it return true
+    console.log(obj1.msg === obj3.msg); //true bcoz value r same inside properties
+
+    const obj4 = {
+      msg: "goodnight",
+      price: 700,
+    };
+
+    //const msg = obj4.msg;
+    const { msg, price } = obj4; //destructuring . it is like const msg = obj4.msg and const price = obj4.price
+    console.log(msg);
+    console.log(price);
+
+    const obj5 = {
+      //msg: msg,
+      msg,
+      /*method: function funX() {
+        console.log("method");
+        return "hi";
+      },*/
+      method() {
+        console.log("method");
+        return "hi";
+      },
+    };
+
+    console.log(obj5);
+    obj5.method();
   </script>
 </html>
