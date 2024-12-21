@@ -67,7 +67,7 @@
     //console.log(JSON.parse(JSON.stringify(product2)));   //convert json to object
     */
 
-    console.log("hello".length); //other values(like strings in console.log also has their properties like length etc this is called javascript auto-boxing. auto-boxing doesnt work with null and undefined)
+    /*console.log("hello".length); //other values(like strings in console.log also has their properties like length etc this is called javascript auto-boxing. auto-boxing doesnt work with null and undefined)
     console.log("hello".toUpperCase());
 
     const obj1 = {
@@ -111,13 +111,30 @@
         console.log("method");
         return "hi";
       },*/
-      method() {
+    /* method() {
         console.log("method");
         return "hi";
       },
     };
 
     console.log(obj5);
-    obj5.method();
+    obj5.method();*/
+
+    const product = {
+      name: "t shirt",
+      price: 200,
+      qty: 1,
+    };
+
+    console.log(product);
+    console.log(product.name);
+    product.name = "shock";
+    console.log(product.name);
+
+    product.color = "white";
+    console.log(product);
+
+    delete product.qty;
+    console.log(product);
   </script>
 </html>

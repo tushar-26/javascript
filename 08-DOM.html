@@ -4,17 +4,32 @@
     <title>document object model</title>
   </head>
   <body>
-    <button>hello</button>
+    <button
+      onclick=""
+    >
+      hello
+    </button>
+    <button class="s2">second btn</button>
     <script>
+      console.log(document.querySelector("button").innerHTML); //when html element inside in the js that is js object
+
+      document.querySelector("button").innerHTML = "changed";
+
+      const btnElement = (document.querySelector(".s2").innerHTML =
+        "chanegd it");
+
+      console.log(btnElement);
+
       //DOM is built in object
       /*
       document.body.innerHTML = "hi";
       document.title = "domi";
-      */
-      console.log(document.title);
+      
+      console.log(document.title);  
       console.log(typeof document.body);
       console.log(document.body.innerHTML);
-      document.body.innerHTML = "changed";
+      document.body.innerHTML = "<button>btn</button>";
+      */
     </script>
   </body>
 </html>
