@@ -6,7 +6,7 @@
   <body></body>
   <script>
     //object groups multiple values to-gether
-    /*const product = {
+    const product = {
       name: "shocks",
       price: 300,
     };
@@ -24,9 +24,7 @@
 
     delete product.newProperty; //dlt the property from object
     console.log(product);
-    */
 
-    /*
     const product2 = {
       name: "shirt",
       ["delivery-time"]: "1PM",
@@ -65,9 +63,8 @@
 
     console.log(JSON.parse(jsonString)); //convert json to object by variable(better to use variabe)
     //console.log(JSON.parse(JSON.stringify(product2)));   //convert json to object
-    */
 
-    /*console.log("hello".length); //other values(like strings in console.log also has their properties like length etc this is called javascript auto-boxing. auto-boxing doesnt work with null and undefined)
+    console.log("hello".length); //other values(like strings in console.log also has their properties like length etc this is called javascript auto-boxing. auto-boxing doesnt work with null and undefined)
     console.log("hello".toUpperCase());
 
     const obj1 = {
@@ -83,12 +80,6 @@
     const obj3 = {
       msg: "goodnight",
     };
-
-    if (obj1 === obj3) {
-      console.log("obj1 and obj3 are same");
-    } else {
-      console.log("obj1 and obj3 are not same");
-    }
 
     console.log(obj1 === obj3); //objects r references thats why obj1 and obj3 has same value but still it return false
     console.log(obj1 === obj2); //obj1 and obj2 has same reference thats why it return true
@@ -107,34 +98,61 @@
     const obj5 = {
       //msg: msg,
       msg,
-      /*method: function funX() {
+      method1: function funX() {
         console.log("method");
         return "hi";
-      },*/
-    /* method() {
+      },
+      method2() {
         console.log("method");
         return "hi";
       },
     };
 
     console.log(obj5);
-    obj5.method();*/
+    obj5.method();
 
-    const product = {
-      name: "t shirt",
-      price: 200,
-      qty: 1,
-    };
+    /*const product = {
+        name: "t shirt",
+        price: 200,
+        qty: 1,
+      };
 
-    console.log(product);
-    console.log(product.name);
-    product.name = "shock";
-    console.log(product.name);
+      console.log(product);
+      console.log(product.name);
+      product.name = "shock";
+      console.log(product.name);
 
-    product.color = "white";
-    console.log(product);
+      product.color = "white";
+      console.log(product);
 
-    delete product.qty;
-    console.log(product);
+      delete product.qty;
+      console.log(product);
+
+      const product2 = {
+        name: "shirt",
+        ["deli-time"]: "1:00",
+        rating: {
+          stars: 4.5,
+          count: 71,
+        },
+        fun: function function5() {
+          console.log("it is inside obj");
+        },
+      };
+
+      console.log(product["name"]);
+      product2.color = "red";
+      console.log(product2);
+      console.log(product2["deli-time"]);
+
+      console.log(product2.rating);
+      console.log(product2.rating.stars);
+
+      product2.fun();
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      // console.log(JSON.parse(JSON.stringify(product2)));
+      */
   </script>
 </html>
