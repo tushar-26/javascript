@@ -31,6 +31,21 @@
       Calculate
     </button>
     <p class="total-cost"></p>
+    <!------------------------------------------------------------------------------------------------------------>
+    <input
+      type="text"
+      placeholder="name..."
+      class="js-input"
+      onkeyup="
+    const inputElement = document.querySelector('.js-input');
+
+    document.querySelector('.js-msg').innerHTML = inputElement.value;
+    
+    "
+    />
+    <p class="js-msg"></p>
+    <!-------------------------------------------------------------------------------------------------------------->
+
     <script>
       function HandleCostKeydown(event) {
         // console.log(event.key);
@@ -38,18 +53,23 @@
           calculateTotal();
         }
       }
+      /*
+       * Issue = the calculation is inaccurate.
+       * Fix = calculate the number in cents and then
+       *       convert back to dollars at the end.
+       */
       function calculateTotal() {
         const inputElement = document.querySelector(".cost-input");
 
-        let cost = Number(inputElement.value);
+        let cost = Number(inputElement.value) * 100; // Convert dollars to cents
 
-        if (cost < 40) {
-          cost = cost + 10; // add $10 for shipping
+        if (cost < 4000) {
+          cost = cost + 1000; // add $10 for shipping, expressed as 1000 cents
         }
 
-        document.querySelector(
-          ".total-cost"
-        ).innerHTML = `Total Cost: $${cost}`;
+        document.querySelector(".total-cost").innerHTML = `Total Cost: $${
+          cost / 100
+        }`; //convert back to dollar by dividing 100
       }
       function subscribe() {
         const btnSubsc = document.querySelector(".subsc");

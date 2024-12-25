@@ -1,35 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>document object model</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
   </head>
   <body>
-    <button
-      onclick=""
-    >
-      hello
-    </button>
-    <button class="s2">second btn</button>
+    <button>heyo</button>
+    <button class="xd">2ndbtn</button>
     <script>
-      console.log(document.querySelector("button").innerHTML); //when html element inside in the js that is js object
+      console.log(document.querySelector("button").innerHTML);
 
       document.querySelector("button").innerHTML = "changed";
+      const buttomElem = document.querySelector(".xd");
+      console.log(buttomElem);
+      /*document.body.innerHTML = "hi";
+      console.log(document.title);
+      document.title = "XD";
 
-      const btnElement = (document.querySelector(".s2").innerHTML =
-        "chanegd it");
-
-      console.log(btnElement);
-
-      //DOM is built in object
-      /*
-      document.body.innerHTML = "hi";
-      document.title = "domi";
-      
-      console.log(document.title);  
-      console.log(typeof document.body);
-      console.log(document.body.innerHTML);
-      document.body.innerHTML = "<button>btn</button>";
-      */
+      document.body.innerHTML = "<button>hi</button>";*/
     </script>
   </body>
 </html>

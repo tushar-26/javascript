@@ -37,7 +37,7 @@
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
-      updateScoreElement();
+      updateScore();
     
     "
     >
@@ -67,7 +67,7 @@
 
       //console.log(JSON.parse(localStorage.getItem("score")));
 
-     updateScoreElement();
+      updateScore();
 
       function playGame(playerMove) {
         const computerMove = pickComputermove();
@@ -111,23 +111,24 @@
         localStorage.setItem("score", JSON.stringify(score)); //local storage only support strings
         // console.log(localStorage.getItem("message","hi there"));
 
-        updateScoreElement();
+        document.querySelector(".result").innerHTML = `${result}`;
+        document.querySelector(
+          ".moves"
+        ).innerHTML = `you:-${playerMove} | Computer:-${computerMove}`;
 
-        document.querySelector('.result').innerHTML = result;
-
-        document.querySelector('.moves').innerHTML = `you ${playerMove} - ${computerMove} Computer`;
-
+        updateScore();
 
         /*alert(
           `you picked ${playerMove}. computer picked ${computerMove}. ${result}
-           wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
+wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
         );*/
       }
- 
-       function updateScoreElement(){
-        document.querySelector(".score")
-        .innerHTML = `wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
-       }
+
+      function updateScore() {
+        document.querySelector(
+          ".score"
+        ).innerHTML = `wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
+      }
 
       function pickComputermove() {
         const randomNumber = Math.random();
