@@ -1,0 +1,54 @@
+.cart {
+  background-color: rgb(255, 216, 20);
+  color: black;
+  border: none;
+  padding: 10px 50px 10px 50px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.req {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Schedule {
+  background-color: rgb(219, 213, 213);
+  color: black;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.test-btn {
+  margin-top: 20px;
+}
+
+.toggle-btn {
+  background-color: red;
+  color: black;
+  border: solid 5px black;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 1s, margin-left 1s;
+}
+.toggle-btn:hover {
+  transform: rotate(360deg) scale(1.99) rotatey(360deg);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.45);
+  margin-left: 30px;
+}
+
+.new-toggled {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+body {
+  background: linear-gradient(to right, lightblue, lightgreen);
+}

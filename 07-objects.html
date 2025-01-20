@@ -31,6 +31,10 @@
       rating: {
         stars: 5,
         count: 45,
+        behevior: {
+          likes: 7,
+          unlikes: 3,
+        },
       },
       fun: function fun1() {
         console.log("funciton inside a object");
@@ -47,6 +51,9 @@
     console.log(product2);
     console.log(product2["rating"]);
     console.log(product2["rating"]["stars"]); //to access nested object
+    product2.rating.behevior.likes = 3;
+    alert(product2.rating.behevior.likes);
+
     product2["fun"](); //to call the function inside object
     // product2.fun();
 

@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>loops-pract</title>
+  </head>
+  <body>
+    <script>
+      /*for (let i = 0; i <= 10; i += 2) {
+        console.log(i);
+      }
+
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+      const a1 = [1, 2, 3];
+      const a2 = [];
+
+      for (let i = 0; i <= a1.length - 1; i++) {
+        const num = a1[i];
+        a2.push(num + 1);
+        //  console.log(a2);
+      }
+      console.log(a2);
+
+      function addOne(arrayInc, num) {
+        const result = [];
+        for (let i = 0; i < arrayInc.length; i++) {
+          const num1 = arrayInc[i];
+          result.push(num1 + num);
+        }
+
+        return result;
+      }
+      console.log(addOne([1, 2, 3], 3));
+      console.log(addOne([2, 3, 4], 12));
+
+      function addArraynum(array1, array2) {
+        const result = [];
+
+        for (let i = 0; i < array1.length; i++) {
+          const num1 = array1[i];
+          const num2 = array2[i];
+          result.push(num1 + num2);
+        }
+        return result;
+      }
+
+      console.log(addArraynum([1, 2, 3], [4, 5, 6]));
+
+      function countPositive(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          const num = array[i];
+          if (num > 0) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      console.log(countPositive([-2, 5, -1, 8, 5, -9, 5, 5]));
+
+      /*  function minMax(nums) {}
+
+      console.log(minMax([3, 7, 1, 6, 9]));
+
+      const st = ["tush", "hachu", "search", "xx"];
+
+      for (let i = 0; i < st.length; i++) {
+        const index = "search";
+      }*/
+
+      /*  function removeEgg(aregg) {
+        const result = [];
+
+        for (let i = 0; i < aregg.length; i++) {
+          const egg = aregg[i];
+
+          if (egg === "egg") {
+            continue;
+          }
+          result.push(egg);
+        }
+        return result;
+      }
+      console.log(removeEgg(["apple", "egg", "banana", "egg", "egg"]));*/
+
+      //challenge exercise part 2
+
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        } else {
+          console.log(i);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <title>array-loops</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30]; //declaring
+      console.log(myArray);
+
+      console.log(myArray[2]); // access value
+
+      myArray[2] = 22; //changing the value
+      console.log(myArray[2]);
+
+      myArray[3] = 40; //adding new value
+      console.log(myArray);
+
+      const multi = [
+        [0.1, 0.2, 0.3],
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      console.log(multi);
+      console.log(multi[2][1]);
+
+      /*for (let a = 3; a < 4; a++) {
+        for (let b = 2; b < 3; b++) {
+          console.log(multi[a][b]);
+        }
+      }*/
+
+      for (let i = 0; i < multi.length; i++) {
+        for (let x = 0; x < multi.length; x++) {
+          console.log(multi[i][x]);
+        }
+      }
+
+      [1, "hello", true, { name: "tshirt" }, [1, 2]];
+
+      console.log(typeof [1, 2]); //array is a object it is also has useful properties and methods
+
+      // console.log(Array.isArray({ ["time-deli"]: "1pm" }));
+
+      console.log(myArray.length); // length of array
+
+      myArray.push(100, 200); //add values in array at end
+      console.log(myArray);
+
+      myArray.splice(0, 2); //first value is the index that we want to remove, second is how many values we want to remove from that index
+      console.log(myArray);
+    </script>
+  </body>
+</html>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>array</title>
+  </head>
+  <body style="margin: -2px">
+    <script>
+      const A = {
+        name: "tushar",
+      };
+      console.log(Array.isArray(A));
+
+      const B = [10, 35, 50];
+
+      B[0] = true;
+
+      B.push(45, 56);
+
+      B.splice(4, 3);
+      console.log(B);
+
+      for (let i = 0; i <= B.length - 1; i++) {
+        console.log(B[i]);
+      }
+
+      const C = [
+        1,
+        true,
+        "tushar",
+        "",
+        null,
+        undefined,
+        { name: "tush", age: 20 },
+        ["1", "2", "three"],
+      ];
+
+      console.log(C);
+      if (Array.isArray(C) !== false) {
+        alert("haa");
+      } else {
+        alert("naa");
+      }
+
+      let x = 0;
+
+      while (x < 2) {
+        alert(true);
+        x++;
+      }
+
+      const nums = [1, 1, 3, true];
+
+      const M = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+        M.push(num * 2);
+      }
+      console.log(M);
+    </script>
+  </body>
+</html>

@@ -2,29 +2,104 @@
 <html>
   <head>
     <title>rock paper scissor</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+      }
+
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .move-img {
+        width: 50px;
+      }
+
+      .move-btn {
+        background-color: transparent;
+        border: solid 3px white;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .result {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 50px;
+        color: aqua;
+      }
+
+      .score {
+        margin-top: 60px;
+      }
+
+      .reset-btn,
+      .auto-play,
+      .btn {
+        margin-top: 10px;
+        background: linear-gradient(to right, gray, white);
+        font-family: cursive;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: oblique;
+        border: solid 2px rgb(251, 2, 2);
+        width: 120px;
+        height: 30px;
+        transition: background 1s, width 1s;
+        cursor: pointer;
+        &:hover {
+          background: linear-gradient(to right, white, gray);
+          width: 200px;
+        }
+      }
+
+      .stop-btn {
+        margin-top: 10px;
+        background-color: red !important;
+        font-family: cursive;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: oblique;
+        border: solid 2px black;
+        width: 120px;
+        height: 30px;
+        transition: background 1s, width 1s;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <p>Rock Paper Scissor Game</p>
+    <p class="title">Rock Paper Scissor Game</p>
     <button
-      onclick="
+      class="move-btn"
+      onclick="  
     playGame('rock');
     "
     >
-      rock
+      <img src="images/rock-emoji.png" alt="rock" class="move-img" />
     </button>
     <button
+      class="move-btn"
       onclick="
        playGame('paper');
     "
     >
-      paper
+      <img src="images/paper-emoji.png" alt="rock" class="move-img" />
     </button>
+
     <button
+      class="move-btn"
       onclick="
       playGame('scissor');
     "
     >
-      scissor
+      <img src="images/scissor-emoji.png" alt="rock" class="move-img" />
     </button>
 
     <p class="result"></p>
@@ -32,6 +107,7 @@
     <p class="score"></p>
 
     <button
+      class="reset-btn"
       onclick="
       score.wins = 0;
       score.losses = 0;
@@ -42,6 +118,10 @@
     "
     >
       reset score
+    </button>
+
+    <button class="auto-play btn" onclick="autoPlay(); btn();">
+      Auto Play
     </button>
 
     <script>
@@ -68,6 +148,33 @@
       //console.log(JSON.parse(localStorage.getItem("score")));
 
       updateScore();
+
+      let isAutoplaying = false;
+      let intervalId;
+
+      function autoPlay() {
+        if (!isAutoplaying) {
+          intervalId = setInterval(function () {
+            //everytime we play setinterval func it return interval id
+            const playerMove = pickComputermove();
+            playGame(playerMove);
+          }, 1);
+          isAutoplaying = true;
+        } else {
+          clearInterval(intervalId);
+          isAutoplaying = false;
+        }
+      }
+      function btn() {
+        const stop = document.querySelector(".btn");
+        if (!stop.classList.contains("stop-btn")) {
+          stop.classList.add("stop-btn");
+          stop.innerHTML = "stop it";
+        } else {
+          stop.classList.remove("stop-btn");
+          stop.innerHTML = "Auto Play";
+        }
+      }
 
       function playGame(playerMove) {
         const computerMove = pickComputermove();
@@ -113,9 +220,10 @@
 
         document.querySelector(".result").innerHTML = `${result}`;
 
-        document.querySelector(
-          ".moves"
-        ).innerHTML = `you:-${playerMove} | Computer:-${computerMove}`;
+        document.querySelector(".moves").innerHTML = `You
+      <img src="images/${playerMove}-emoji.png" class="move-img" />
+      <img src="images/${computerMove}-emoji.png" class="move-img" />
+      Computer`;
 
         updateScore();
 

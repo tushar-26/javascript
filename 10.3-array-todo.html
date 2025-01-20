@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>array-todoList project</title>
+  </head>
+  <body>
+   
+
+    
+    <h1 class="heading" style="font-family:cursive;">todo list by tushar</h1>
+
+    <div class="container">
+      <input
+        type="text"
+        placeholder="enter-todo"
+        class="todo-input2 input-css"
+        onkeydown="keyEvent(event);"
+      />
+
+      <input type="date" class="todo-date date-css" onkeydown="keyEvent(event);">
+      <button class="add-todo2" onclick="addTodo2();">Add it</button>
+    </div>
+    <div
+      class="js-todolist2 todo-grid"
+    
+    ></div>
+
+    <script>
+     
+      const todoList2 = JSON.parse(localStorage.getItem('todoList2')) ||
+      
+                        [{name: 'wash-dishe', date: '01-07-2022' },
+                         {name: 'clean-ruff', date: '13-01-2023'}]; //default given values
+
+                         //alertJSON.parse(localStorage.getItem('todoList2'));
+
+      renderTodoList2();
+
+    
+
+      function renderTodoList2() {
+        let renderHtml2 = "";
+
+        for (let i = 0; i < todoList2.length; i++) {
+          const todoObject = todoList2[i];
+          const {name,date} = todoObject;  //destructuring
+          const html = `<div>${name} </div> <div>${date}</div> 
+          <button onclick="todoList2.splice(${i},1); renderTodoList2(); saveTostorage();">delete</button>`;
+          renderHtml2 = renderHtml2 + html;
+        }
+
+        document.querySelector(".js-todolist2").innerHTML = renderHtml2;
+      }
+      function addTodo2() {
+        const inputElement2 = document.querySelector(".todo-input2");
+        const todoName2 = inputElement2.value;
+
+        const dateElement2 = document.querySelector(".todo-date");
+        const todoDate2 = dateElement2.value;
+
+        todoList2.push({name: todoName2, date: todoDate2});
+       // console.log(todoList2);
+
+        inputElement2.value = '';
+        dateElement2.value = "";
+
+        renderTodoList2();
+
+        document.title = 'added';
+        saveTostorage();// Whenever we update the todo list, save in localStorage.
+      }
+      
+      
+      function saveTostorage(){
+        localStorage.setItem('todoList2', JSON.stringify(todoList2));
+      }
+       
+      function keyEvent(event){
+        if(event.key === 'Enter'){
+         addTodo2();
+        }
+      }
+    </script>
+    <style>
+
+      body{
+        background: linear-gradient(to left, rgb(244, 148, 237), rgb(212, 178, 139));
+      }
+
+      .todo-grid{
+        display: grid;
+        grid-template-columns: 160px 120px 100px;
+        column-gap: 40px;
+        row-gap: 10px;
+        justify-content: start;
+        align-items: start;
+
+      }
+
+      .todo-grid button{
+        background: linear-gradient(to right,rgb(9, 162, 213),green );
+        color:white;
+        border:none;
+        width: 70px;
+        padding: 8px 10px;
+        &:active{
+          padding: 6px 8px;
+        }
+        
+      }
+
+      .todo-grid div{
+      
+        font-family: verdana;
+        font-size: 14px;
+        box-shadow: inset 0 0 10px;
+        text-align: center;
+        padding: 7px 0px;
+      }
+      .container{
+        display: grid;
+        grid-template-columns: 160px 120px 100px;
+        
+        column-gap: 40px;
+        margin-bottom: 20px;
+        justify-content: start;
+        align-items: start;
+
+      }
+
+      .input-css{
+      font-size: 15px;
+      padding: 5px 10px;
+      
+      }
+
+      .date-css{
+      padding: 5px 10px;
+      
+        
+      }
+      .add-todo2{
+        width: 70px;
+        padding: 7px 10px;
+        background: linear-gradient(to right, rgb(209, 14, 223),rgb(211, 12, 42));
+        color: white;
+        border:none;
+        &:active{
+          padding: 5px;
+        }
+      
+      
+      }
+
+    
+      
+    </style>
+  </body>
+</html>
+
+<!--<html>
+  <head> </head>
+
+  <body>
+    <h2>todoList</h2>
+
+    <input type="text" placeholder="enter..." class="input" />
+    <button onclick="addtodo();">Add</button>
+    <div class="todolist" style="border: solid 1px black"></div>
+
+    <script>
+      const TodoArray = ["enjoy"];
+
+      function rendertodo() {
+        let render = "";
+        for (let i = 0; i < TodoArray.length; i++) {
+          const todo = TodoArray[i];
+          const html = `<p style="color: pink;">${todo}</p>`;
+          render = render + html;
+        }
+
+        document.querySelector(".todolist").innerHTML = render;
+      }
+
+      function addtodo() {
+        const inputElem = document.querySelector(".input");
+
+        const todoName = inputElem.value;
+
+        TodoArray.push(todoName);
+
+        console.log(TodoArray);
+
+        inputElem.value = "";
+
+        rendertodo();
+      }
+    </script>
+  </body>
+</html>

@@ -3,30 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>coinFlip</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .p1 {
+        width: 570px;
+        text-align: center;
+        background-color: aqua;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial;
+        font-style: italic;
+        margin-bottom: 100px;
+        border: solid 5px red;
+        padding: 10px;
+        box-shadow: blue 0 0 40px;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+      .icon {
+        width: 100px;
+      }
+      .guess-btn {
+        background-color: transparent;
+        border: solid 3px white;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: background-color 1s;
+        &:hover {
+          background-color: cadetblue;
+        }
+        &:active {
+          background-color: brown;
+          box-shadow: inset blue 0 0 10px;
+        }
+      }
+      .result {
+        color: red;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 20px 0px;
+        font-family: Courier;
+      }
+      .moves {
+        font-size: 20px;
+        color: white;
+      }
+      .score {
+        color: white;
+        font-family: Arial;
+        font-style: oblique;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+
+      .auto,
+      .reset {
+        background: linear-gradient(to right, blue, orange);
+        border: double 8px red;
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 15px;
+        padding: 7px 15px;
+
+        margin-left: 10px;
+      }
+
+      .stop-btn {
+        margin-top: 10px;
+        background-color: red !important;
+        font-family: cursive;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: oblique;
+        border: solid 2px black;
+        width: 120px;
+        height: 30px;
+        transition: background 1s, width 1s;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
+    <div>
+      <p class="p1">just a normal guessing game by tushar</p>
+    </div>
     <button
+      class="guess-btn"
       onclick="
       playGame('heads');
     "
     >
-      heads
+      <img src="cssFrom9/heads.png" class="icon" />
     </button>
     <button
+      class="guess-btn"
       onclick="
       playGame('tails');
     "
     >
-      tails
+      <img src="cssFrom9/tails.png" class="icon" />
     </button>
+
+    <p class="result"></p>
+    <p class="moves"></p>
+    <p class="score"></p>
+
+    <button
+      class="reset"
+      onclick="
+    score.win = 0;
+    score.lose = 0;
+    localStorage.removeItem('score');
+    updateScore();
+
+    
+    "
+    >
+      Reset-Score
+    </button>
+    <button class="auto" onclick="autoPlay();">AutoPlay</button>
   </body>
   <script>
     /* const score = {
-      win: 0,
-      lose: 0,
-    };*/
-    const score = JSON.parse(localStorage.getItem("score"));
+          win: 0,
+          lose: 0,
+        };*/
+    let score = JSON.parse(localStorage.getItem("score"));
 
     if (!score) {
       score = {
@@ -36,6 +148,29 @@
     }
 
     //  console.log(localStorage.getItem("score"));
+
+    updateScore();
+
+    let isAutoplaying = false;
+    let intervalID = "";
+    const btn = document.querySelector(".auto");
+
+    function autoPlay() {
+      if (!isAutoplaying) {
+        intervalID = setInterval(function () {
+          const playerGuess = pickComputermove();
+          playGame(playerGuess);
+        }, 1);
+        isAutoplaying = true;
+        //  btn.classList.add("stop-btn");
+        btn.innerHTML = "stop it";
+      } else {
+        clearInterval(intervalID);
+        isAutoplaying = false;
+        //btn.classList.remove("stop-btn");
+        btn.innerHTML = "AutoPlay";
+      }
+    }
 
     function playGame(playerGuess) {
       const computerMove = pickComputermove();
@@ -56,10 +191,22 @@
 
       localStorage.setItem("score", JSON.stringify(score));
 
-      alert(
+      document.querySelector(".result").innerHTML = `${result}`;
+
+      document.querySelector(
+        ".moves"
+      ).innerHTML = `You - <img src="cssFrom9/${playerGuess}.png" class="icon"> | Computer - <img src="cssFrom9/${computerMove}.png" class="icon">`;
+
+      updateScore();
+      /*alert(
         `your guess is ${playerGuess}. computer play ${computerMove}. result ${result}.
-win:-${score.win}, lose:-${score.lose}`
-      );
+    win:-${score.win}, lose:-${score.lose}`
+      );*/
+    }
+
+    function updateScore() {
+      document.querySelector(".score").innerHTML = `
+    win:-${score.win}, lose:-${score.lose}`;
     }
 
     function pickComputermove() {

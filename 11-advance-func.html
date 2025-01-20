@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>advance funnction</title>
+    <link rel="icon" href="user-pic.jpeg" />
+  </head>
+  <body>
+    <script>
+      /*  function greeding() {
+        console.log("hello");
+      }
+      greeding();
+
+      const num = 2;
+
+      const function1 = function () {
+        //anonymus function when function is inside the variable without name
+        console.log("hello2");
+      };
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const ob1 = {
+        num: 1,
+        fun: function greeding() {
+          console.log("helo3");
+        },
+      };
+      ob1.fun();
+
+      function display(param) {
+        console.log(param);
+      }
+      display(1);
+
+      function run(param) {
+        param();
+      }
+                              //passing a function into another function
+      run(function () {      //this function we are passing in is called a Callback function or callback              
+        console.log("hellofor");
+      }); */
+
+      /*   setTimeout(function () {
+        console.log("timout");
+        console.log("to2");
+      }, 4000); //asynchronous code means computer wont wait for this line to finish before going to nextline
+      console.log("next-line");
+
+      setInterval(function () {
+        console.log("interval");
+        console.log("i2");
+      }, 3000); //setInterval like setTimeout but it keep running a function after every given seconds it also asynchronous
+      console.log("nexline"); */
+
+      ["hi", "ff", "add"].forEach(function (vale, idex) {
+        if (vale === "ff") {
+          return;
+        }
+        console.log(idex);
+        console.log(vale);
+      });
+
+      let f1 = function (obj) {
+        console.log("hi");
+        const objToJSON = JSON.stringify(obj);
+        return objToJSON;
+      };
+
+      console.log(f1({ name: "tushar", age: 20 }));
+
+      setInterval(function () {
+        console.log("XX");
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -4,84 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>html-css-js together</title>
-    <style>
-      .cart {
-        background-color: rgb(255, 216, 20);
-        color: black;
-        border: none;
-        padding: 10px 50px 10px 50px;
-        font-size: 15px;
-        border-radius: 20px;
-        cursor: pointer;
-      }
-      .req {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 10px 15px 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .Schedule {
-        background-color: rgb(219, 213, 213);
-        color: black;
-        border: none;
-        padding: 10px 20px 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .js-btn {
-        margin-top: 20px;
-      }
-
-      .is-toggled {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-      }
-      .new-toggled {
-        background-color: white;
-        color: black;
-        border: solid 2px black;
-        padding: 10px 15px;
-        border-radius: 4px;
-      }
-
-      .Music {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-      }
-
-      .Musiced {
-        background-color: white;
-        color: black;
-        border: solid 2px black;
-        padding: 10px 15px;
-        border-radius: 4px;
-      }
-
-      .Tech {
-        background-color: red;
-        color: black;
-        border: solid 5px black;
-        padding: 10px 15px;
-        cursor: pointer;
-      }
-
-      .Teched {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-      }
-    </style>
+    <link rel="stylesheet" href="cssFrom9/9-DOMtogether.css" />
   </head>
   <body>
     <button class="cart">Add to Cart</button>
@@ -95,87 +18,68 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 10px;
+        cursor: crosshair;
       "
     >
       <button class="req">Request now</button>
       <button class="Schedule">Schedule for later</button>
     </div>
 
-    <button class="js-btn">Test</button>
+    <button class="test-btn">Test</button>
 
     <button
-      class="is-toggled"
+      class="toggle-btn js-btn"
       onclick="
-     gaming();
+    // gaming();
+    toggled('.js-btn');
     "
     >
       Gaming
     </button>
 
     <button
-      class="Music"
+      class="toggle-btn js-btn2"
       onclick="
-      music();
+     // music();
+     toggled('.js-btn2');
     "
     >
       Music
     </button>
 
     <button
-      class="Tech"
+      class="toggle-btn js-btn3"
       onclick="
-       tech();
+       //tech();
+       toggled('.js-btn3');
     "
     >
       Tech
     </button>
 
-    <script>
-      const jsBtn = document.querySelector(".js-btn");
+    <button
+      class="toggle-btn js-btn5"
+      onclick="
+    const cycling = document.querySelector('.js-btn5');
 
-      console.log(jsBtn.classList.contains("js-btn"));
+    if(!cycling.classList.contains('new-toggled')){
+      previousBtn();
+      cycling.classList.add('new-toggled');
+      cycling.innerHTML = 'cycled';
+    }else{
+      cycling.classList.remove('new-toggled');
+      cycling.innerHTML = 'cycling';
+    }
+   
+    
+  
+    
 
-      function gaming() {
-        const Gaming = document.querySelector(".is-toggled");
+    "
+    >
+      cycling
+    </button>
 
-        if (!Gaming.classList.contains("new-toggled")) {
-          Gaming.classList.add("new-toggled");
-        } else {
-          Gaming.classList.remove("new-toggled");
-        }
-      }
-
-      function music() {
-        const MusicBtn = document.querySelector(".Music");
-
-        if (MusicBtn.innerText === "Music") {
-          MusicBtn.innerHTML = "Musiced";
-        } else {
-          MusicBtn.innerHTML = "Music";
-        }
-
-        if (!MusicBtn.classList.contains("Musiced")) {
-          MusicBtn.classList.add("Musiced");
-        } else {
-          MusicBtn.classList.remove("Musiced");
-        }
-      }
-
-      function tech() {
-        const techBtn = document.querySelector(".Tech");
-
-        if (techBtn.innerText === "Tech") {
-          techBtn.innerHTML = "Teched";
-        } else {
-          techBtn.innerHTML = "Tech";
-        }
-
-        if (techBtn.innerText === "Teched") {
-          techBtn.classList.add("Teched");
-        } else {
-          techBtn.classList.remove("Teched");
-        }
-      }
-    </script>
+    <script src="jsFrom9/9-DOMtogether.js"></script>
   </body>
 </html>

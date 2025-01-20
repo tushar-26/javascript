@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Before and After</title>
+    <style>
+      .box {
+        position: relative;
+        width: 200px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 100px;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Adding a ribbon using ::before */
+      .box::before {
+        content: "Sale";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        transform: rotate(-45deg);
+        box-shadow: blue 0 2px 5px;
+      }
+
+      /* Adding a shadow effect using ::after */
+      .box::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: rgba(0, 0, 0, 0.1);
+        filter: blur(1px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Product</div>
+  </body>
+</html>
