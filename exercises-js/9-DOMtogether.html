@@ -60,24 +60,28 @@
     <button
       class="toggle-btn js-btn5"
       onclick="
-    const cycling = document.querySelector('.js-btn5');
-
-    if(!cycling.classList.contains('new-toggled')){
-      previousBtn();
-      cycling.classList.add('new-toggled');
-      cycling.innerHTML = 'cycled';
-    }else{
-      cycling.classList.remove('new-toggled');
-      cycling.innerHTML = 'cycling';
-    }
-   
-    
-  
-    
+    toggled('.js-btn5');
 
     "
     >
       cycling
+    </button>
+
+    <button class="toggle-btn js-btn6"
+    onclick="
+    const killing = document.querySelector('.js-btn6');
+
+    if(!killing.classList.contains('new-toggled')){
+      previousBtn();
+       killing.classList.add('new-toggled')
+       killing.innerHTML = 'killed';
+    }else{
+      killing.classList.remove('new-toggled');
+      killing.innerHTML = 'killing';
+    }
+    "
+    >
+      killing
     </button>
 
     <script src="jsFrom9/9-DOMtogether.js"></script>

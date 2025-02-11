@@ -26,6 +26,8 @@
     ></div>
 
     <script>
+
+
      
       const todoList2 = JSON.parse(localStorage.getItem('todoList2')) ||
       
@@ -45,11 +47,19 @@
           const todoObject = todoList2[i];
           const {name,date} = todoObject;  //destructuring
           const html = `<div>${name} </div> <div>${date}</div> 
-          <button onclick="todoList2.splice(${i},1); renderTodoList2(); saveTostorage();">delete</button>`;
+          <button class="dlts" onclick="todoList2.splice(${i},1); renderTodoList2(); saveTostorage();">delete</button>`;
           renderHtml2 = renderHtml2 + html;
         }
 
         document.querySelector(".js-todolist2").innerHTML = renderHtml2;
+
+      /* document.querySelectorAll(".dlts").forEach((dltbtn,index)=>{
+        dltbtn.addEventListener('click',()=>{
+          todoList2.splice(index,1); renderTodoList2(); saveTostorage();
+        })
+       })*/
+
+       
       }
       function addTodo2() {
         const inputElement2 = document.querySelector(".todo-input2");

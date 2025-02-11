@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button class="event-run" onclick="pg('rock');">rock</button>
+        <button>paper</button>
+        <button>scissor</button>
+        <h1 class="d"></h1>
+        <script>
+
+            display();
+
+         function pg(pm){
+            const cm = computerm();
+
+            let result = '';
+
+
+            if(pm === 'rock'){
+                if(cm === 'rock'){
+            result = 'tie';
+         }else if(cm === 'paper'){
+            result = 'lose';
+         }else if(cm === 'scissor'){
+            result = 'win';
+         }
+            }else if(pm === 'paper'){
+                if(cm === 'rock'){
+                    result = 'win';
+                }else if(cm === 'paper'){
+                    result = 'tie';
+                }else if(cm === 'scissor'){
+                    result = 'lose';
+                }
+            }else if(pm === 'scissor'){
+                if(cm === 'rock'){
+                    result = 'lose';
+            }else if(cm === 'paper'){
+                result = 'win';
+            }else if(cm === 'scissor'){
+                result = 'tie';
+            }
+         }
+
+         alert(`you choose ${pm} and computer choose ${cm} so result is = ${result}`);
+         
+         display();
+
+         function display(){
+         const dis = document.querySelector('.d');
+
+         dis.innerHTML = `you choose ${pm} and computer choose ${cm} so result is = ${result}`;
+        }
+        }
+
+        
+
+
+         function computerm(){
+            const rm = Math.random();
+            let cm = '';
+
+            if(rm >= 0 && rm< 1/3){
+               cm = 'rock';
+            }else if(rm >=1/3 && rm < 1/2){
+                cm = 'paper';
+            }else if(rm >=1/2 && rm < 1){
+                cm = 'scissor';
+            }
+
+            return cm;
+
+         }
+
+         
+         
+        </script>
+    </body>
+</html>

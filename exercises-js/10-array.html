@@ -32,6 +32,19 @@
       console.log(arraySwap([10, 20, 30]));
       console.log(arraySwap(["hi", "gn", "ok"]));
       //-------------------------------------------------------------------------
+
+      function swapit(a1){
+        let lv = a1.length - 1;
+        let fv = a1[0];
+
+        a1[0] = a1[lv]
+        a1[lv] = fv;
+        return a1;
+
+      }
+      const rr = swapit([1,2,'hi']);
+
+      alert(rr);
     </script>
   </body>
 </html>

@@ -5,14 +5,61 @@
     <link rel="icon" href="user-pic.jpeg" />
   </head>
   <body>
+
+    <button class="click"  onkeydown="">click</button>
     <script>
-      /*  function greeding() {
+     
+
+      const btn = document.querySelector('.click');
+
+      const eventLi1 = () => {
+        alert('button clicked');
+      }
+
+    
+
+      btn.addEventListener('click',eventLi1);
+
+      btn.removeEventListener('click',eventLi1);
+
+      const eventLi2 = () => {
+        alert('button clickedXX');
+      }
+
+      btn.addEventListener('click',eventLi2);
+      //btn.removeEventListener('click',eventLi2);
+
+
+      console.log([1,-4,5,0].filter((value,i)=>{
+         if(value >=0){
+          return true;
+         }
+         
+         else {
+          return false;
+         }
+        return value >= 0;
+      }));
+  
+      alert([1,1,9].map((value,i)=>{          //map transform array into onther array based on the return value
+        return value * 2; //multed each value to 2 and added array
+      }));
+
+      alert([1,1,9].map(value => value * 2)); 
+      
+     
+
+
+//part 1--------------------------------------------------------------------------------------------------------------------------
+
+    /*   function greeding() {
         console.log("hello");
       }
       greeding();
 
       const num = 2;
-
+       
+      
       const function1 = function () {
         //anonymus function when function is inside the variable without name
         console.log("hello2");
@@ -41,21 +88,24 @@
                               //passing a function into another function
       run(function () {      //this function we are passing in is called a Callback function or callback              
         console.log("hellofor");
-      }); */
+      }); 
 
-      /*   setTimeout(function () {
+         setTimeout(function () {
         console.log("timout");
         console.log("to2");
       }, 4000); //asynchronous code means computer wont wait for this line to finish before going to nextline
       console.log("next-line");
 
-      setInterval(function () {
+    /*  setInterval(function () {
         console.log("interval");
         console.log("i2");
       }, 3000); //setInterval like setTimeout but it keep running a function after every given seconds it also asynchronous
       console.log("nexline"); */
 
-      ["hi", "ff", "add"].forEach(function (vale, idex) {
+
+
+
+   /* ["hi", "ff", "add"].forEach(function (vale, idex) {
         if (vale === "ff") {
           return;
         }
@@ -71,9 +121,41 @@
 
       console.log(f1({ name: "tushar", age: 20 }));
 
-      setInterval(function () {
-        console.log("XX");
-      }, 2000);
+
+
+
+     const arrowFunc = () => {
+        alert('hi');
+      }
+      arrowFunc();
+
+      const oneParam = param => {  //dont need to use () if only one parameter
+      alert(param);
+      return param;
+      }
+     let get = oneParam("tushar");
+
+     alert(get + 20);
+
+     const oneLine = () => 5 + 5;  // one line arrow func for return
+     
+     let getOne = oneLine();
+     alert(getOne);
+
+     const ob4 = {
+       
+      method:() => {
+      console.log("in object dont use arrow func");
+     },
+    better(){
+      console.log('in object use shorthand method');
+    }
+    }
+    ob4.method();
+    ob4.better();
+*/
+
+
     </script>
   </body>
 </html>

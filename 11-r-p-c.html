@@ -72,19 +72,41 @@
         transition: background 1s, width 1s;
         cursor: pointer;
       }
+
+      .score {
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80, blue,red,white,purple);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 1s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
     </style>
   </head>
   <body>
     <p class="title">Rock Paper Scissor Game</p>
     <button
-      class="move-btn"
-      onclick="  
-    playGame('rock');
-    "
+    title="click to play"
+      class="move-btn event-li"
+      
     >
       <img src="images/rock-emoji.png" alt="rock" class="move-img" />
     </button>
     <button
+    
+    title="click to play"
       class="move-btn"
       onclick="
        playGame('paper');
@@ -94,6 +116,7 @@
     </button>
 
     <button
+    title="click to play"
       class="move-btn"
       onclick="
       playGame('scissor');
@@ -125,6 +148,19 @@
     </button>
 
     <script>
+
+      document.querySelector('.event-li').addEventListener('click',()=>{
+        playGame('rock');
+      })
+      document.body.addEventListener('keydown',(event) =>{
+        if(event.key === 'r'){
+          playGame('rock')
+        }
+     })
+
+     document.addEventListener('keydown',(event) =>{
+      alert(event.key);
+     })
       /*const score = {
         wins: 0,
         losses: 0,
@@ -158,8 +194,9 @@
             //everytime we play setinterval func it return interval id
             const playerMove = pickComputermove();
             playGame(playerMove);
-          }, 1);
+          }, 5);
           isAutoplaying = true;
+        //  document.querySelector("btn").innerHTML = "putted";
         } else {
           clearInterval(intervalId);
           isAutoplaying = false;

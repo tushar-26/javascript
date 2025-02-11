@@ -70,20 +70,22 @@
         const index = "search";
       }*/
 
-      /*  function removeEgg(aregg) {
+       function removeEgg(aregg) {
         const result = [];
+        let rg = 0;
 
         for (let i = 0; i < aregg.length; i++) {
           const egg = aregg[i];
 
-          if (egg === "egg") {
+          if (egg === "egg" && rg < 2 ) {
+            rg++;
             continue;
           }
           result.push(egg);
         }
         return result;
       }
-      console.log(removeEgg(["apple", "egg", "banana", "egg", "egg"]));*/
+      alert(removeEgg(["apple", "egg", "banana", "egg", "egg"]));
 
       //challenge exercise part 2
 
