@@ -2,8 +2,13 @@
 <html>
   <head>
     <title class="ti">Advance Functions practise</title>
+    <style>
+      .display {
+        color: red;
+      }
+    </style>
   </head>
-  <body style="background-color: black;">
+  <body style="background-color: black">
     <button
       class="sec"
       title="lol click it"
@@ -28,26 +33,27 @@
       title="om namah shivay"
       onclick="
     
-    const display = document.querySelector('.display');
+   /* const display = document.querySelector('.display');
     let remove;
 
    remove = setInterval(function(){
+    
       display.innerHTML = 'added';
     },);
 
     setTimeout(function(){
       clearInterval(remove);
       display.innerHTML = '';
-    },2000);
+    },2000);*/
 
-    document.querySelector('.display').innerHTML = 'added';
+   document.querySelector('.display').innerHTML = 'added';
     let id;
 
     clearTimeout(id);
 
        id =  setTimeout(function(){
       document.querySelector('.display').innerHTML = '';
-    },2000);
+    },5000);
 
     
 
@@ -57,18 +63,24 @@
     </button>
     <p class="display"></p>
 
-    <button class="inc" onclick="message++; display();">add</button>
-    <button class="dec" onclick="
+    <button class="inc" onclick="message++; display(); ">add</button>
+    <button
+      class="dec"
+      onclick="
     if(message > 0){
       message--;
     }
     if(message == 0){
-      cancelnoti();
+     cancelnoti();
+   
     }
-    ">remove</button>
+    "
+    >
+      remove
+    </button>
 
     <script>
-    /*  const add = function () {
+      const add = function () {
         console.log(2 + 3);
       };
 
@@ -85,95 +97,88 @@
 
       addTwise(add);
 
-      let message =  2;
+      let message = 2;
       let Id;
 
       let displaynotification;
 
       display();
 
-      function display(){
-        if(displaynotification){
+      function display() {
+        if (displaynotification) {
           return;
         }
       }
 
-      displaynotification = true;
+      run();
+      function run() {
+        displaynotification = true;
 
-      const title = document.querySelector(".ti");
-      Id = setInterval(function () {
-       
-        if (title.innerHTML === "Advance Functions practise") {
-          title.innerHTML = `(${message}) messages`;
-        } else {
-          title.innerHTML = "Advance Functions practise";
+        const title = document.querySelector(".ti");
+        Id = setInterval(function () {
+          if (title.innerHTML === "Advance Functions practise") {
+            title.innerHTML = `(${message}) messages`;
+          } else {
+            title.innerHTML = "Advance Functions practise";
+          }
+        }, 2000);
+
+        function cancelnoti() {
+          displaynotification = false;
+          clearInterval(Id);
+          title.innerHTML = "No messages";
         }
-
-      
-      }, 2000);
-
-      function cancelnoti(){
-        displaynotification = false;
-        clearInterval(Id);
-        title.innerHTML = 'No messages';
-    }*/
-
-  //part2--------------------------------------------------------------------------------------------------------------------
-  
-   let n1 = 6;
-   let n2 = 3;
-
-   const  multi = (v1,v2)=> v1 * v2
-   alert(multi(n1,n2)) //thats why put value into func
-   const getR = multi(2,4);
-
-   alert(`${getR + 2}`);
-
-   const cp = (array)=>{
-    let posi = 0;
-     array.forEach((value,i)=>{
-      if(value > 0){
-        posi++;
       }
-       
-     })
-     return posi;
-   }
-  console.log(cp([4,2,-1,5,-2,-8,9]));
 
- 
+      //part2--------------------------------------------------------------------------------------------------------------------
 
- /* const addN = (arr,n)=>{
-    const NA = [];
-    arr.map((v,i)=>{
-      const num = v + n;
-      NA.push(num);
-    })
-    return NA;
-  }
-  alert(addN([1,2,3],2));*/
+      let n1 = 6;
+      let n2 = 3;
 
-  const addN = (arr,n)=>{
+      const multi = (v1, v2) => v1 * v2;
+      alert(multi(n1, n2)); //thats why put value into func
+      const getR = multi(2, 4);
 
-    return arr.map(value=> value + n)
+      alert(`${getR + 2}`);
 
-  }
-  alert(addN([1,2,3],2));
+      const cp = (array) => {
+        let posi = 0;
+        array.forEach((value, i) => {
+          if (value > 0) {
+            posi++;
+          }
+        });
+        return posi;
+      };
+      console.log(cp([4, 2, -1, 5, -2, -8, 9]));
 
-  const RE = (arr)=>{
-    let eggRemo = 0;
-    return arr.filter((v)=>{
-      if(v == 'egg' && eggRemo < 2 ){
-        eggRemo++;
-        return false;
-      }else{
-        return true;
-      }
-    })
-  }
-  alert(RE(['egg','tush','egg',true,'op','egg']));
+      const addN = (arr, n) => {
+        const NA = [];
+        arr.map((v, i) => {
+          const num = v + n;
+          NA.push(num);
+        });
+        return NA;
+      };
+      alert(addN([1, 2, 3], 2));
 
+      const addNN = (arr, n) => {
+        return arr.map((value) => value + n);
+      };
+      alert(addN([1, 2, 3], 2));
 
+      const RE = (arr) => {
+        let eggRemo = 0;
+        return arr.filter((v) => {
+          if (v == "egg" && eggRemo < 2) {
+            eggRemo++;
+            return false;
+          } else {
+            return true;
+          }
+        });
+      };
+      alert(RE(["egg", "tush", "egg", true, "op", "egg"]));
     </script>
   </body>
 </html>

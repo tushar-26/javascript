@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>obj</title>
+  </head>
+  <body>
+    <script>
+      // factory function where we return the value
+      function cC(radius) {
+        return {
+          radius, //if property and value  name is same
+
+          draw() {
+            alert("draw");
+          },
+        };
+      }
+
+      const cicle = cC(3);
+      // alert(cicle.radius);
+      // cicle.draw();
+
+      //Constructor function where we use this keyword
+      function Cricle(radius) {
+        //    console["log"](this);
+        this.radius = radius;
+        this.draw = () => {
+          console.log("draw");
+        };
+        return this;
+      }
+      const obj = Cricle.call({}, 3);
+      const obj2 = Cricle.apply({}, ["t", 2, 3, true]);
+      alert(obj2.radius);
+
+      const another = new Cricle(2);
+      //   alert(another.radius);
+
+      another.location = { x: 9 };
+      const PorpertyName = "center-location";
+
+      another[PorpertyName] = { x: 1 };
+      alert(another[PorpertyName].x);
+
+      for (let key in another) {
+        if (typeof another[key] !== "function") {
+          alert(key, another[key]);
+        }
+      }
+
+      const keys = Object.keys(another);
+      alert("this" + keys);
+
+      if ("draw" in another) {
+        alert("it has draww");
+      } else {
+        window.location.href = "poly.html";
+      }
+    </script>
+  </body>
+</html>

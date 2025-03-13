@@ -1,6 +1,6 @@
 const jsBtn = document.querySelector(".js-btn");
 
-const result = (jsBtn.classList.contains("js-btn"));
+const result = jsBtn.classList.contains("js-btn");
 alert(result - 2);
 
 /*function gaming() {
@@ -93,17 +93,16 @@ function toggled(selector) {
       toggledBtn.classList.remove("new-toggled");
       toggledBtn.innerHTML = "swimming";
     }
-  }else if(selector === 'js-btn5'){
-    if(toggledBtn.classList.contains('new-toggled')){
+  } else if (selector === ".js-btn5") {
+    if (toggledBtn.classList.contains("new-toggled")) {
       previousBtn();
-      toggledBtn.classList.add('new-toggled');
-      toggledBtn.innerHTML = 'cycled';
-    }else{
-      toggledBtn.classList.remove('new-toggled');
-      toggledBtn.innerHTML = 'cycling'
+      toggledBtn.classList.add("new-toggled");
+      toggledBtn.innerHTML = "cycled";
+    } else {
+      toggledBtn.classList.remove("new-toggled");
+      toggledBtn.innerHTML = "cycling";
     }
   }
-
 }
 
 function previousBtn() {
