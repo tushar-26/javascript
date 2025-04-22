@@ -1,7 +1,7 @@
 const jsBtn = document.querySelector(".js-btn");
 
 const result = jsBtn.classList.contains("js-btn");
-alert(result - 2);
+alert(result);
 
 /*function gaming() {
   const Gaming = document.querySelector(".js-btn");
@@ -111,6 +111,7 @@ function previousBtn() {
   const chTechtext = document.querySelector(".js-btn3");
   const chMusictext = document.querySelector(".js-btn2");
   const chGamingtext = document.querySelector(".js-btn");
+  const chkillingtext = document.querySelector(".js-btn6");
 
   const cyc = document.querySelector(".js-btn5");
 
@@ -119,6 +120,7 @@ function previousBtn() {
     chTechtext.innerHTML = "Tech";
     chMusictext.innerHTML = "Music";
     chGamingtext.innerHTML = "Gaming";
+    chkillingtext.innerHTML = "changed when other btn";
 
     cyc.innerHTML = "tmc";
   }

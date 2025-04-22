@@ -5,54 +5,48 @@
     <link rel="icon" href="user-pic.jpeg" />
   </head>
   <body>
-
-    <button class="click"  onkeydown="">click</button>
+    <button class="click" onkeydown="">click</button>
     <script>
-     
-
-      const btn = document.querySelector('.click');
+      const btn = document.querySelector(".click");
 
       const eventLi1 = () => {
-        alert('button clicked');
-      }
+        alert("button clicked");
+      };
 
-    
+      btn.addEventListener("click", eventLi1);
 
-      btn.addEventListener('click',eventLi1);
-
-      btn.removeEventListener('click',eventLi1);
+      btn.removeEventListener("click", eventLi1);
 
       const eventLi2 = () => {
-        alert('button clickedXX');
-      }
+        alert("button clickedXX");
+      };
 
-      btn.addEventListener('click',eventLi2);
+      btn.addEventListener("click", eventLi2);
       //btn.removeEventListener('click',eventLi2);
 
+      console.log(
+        [1, -4, 5, 0].filter((value, i) => {
+          if (value >= 0) {
+            return true;
+          } else {
+            return false;
+          }
+          return value >= 0;
+        })
+      );
 
-      console.log([1,-4,5,0].filter((value,i)=>{
-         if(value >=0){
-          return true;
-         }
-         
-         else {
-          return false;
-         }
-        return value >= 0;
-      }));
-  
-      alert([1,1,9].map((value,i)=>{          //map transform array into onther array based on the return value
-        return value * 2; //multed each value to 2 and added array
-      }));
+      alert(
+        [1, 1, 9].map((value, i) => {
+          //map transform array into onther array based on the return value
+          return value * 2; //multed each value to 2 and added array
+        })
+      );
 
-      alert([1,1,9].map(value => value * 2)); 
-      
-     
+      alert([1, 1, 9].map((value) => value * 2));
 
+      //part 1--------------------------------------------------------------------------------------------------------------------------
 
-//part 1--------------------------------------------------------------------------------------------------------------------------
-
-    /*   function greeding() {
+      /*   function greeding() {
         console.log("hello");
       }
       greeding();
@@ -102,12 +96,9 @@
       }, 3000); //setInterval like setTimeout but it keep running a function after every given seconds it also asynchronous
       console.log("nexline"); */
 
-
-
-
-   /* ["hi", "ff", "add"].forEach(function (vale, idex) {
+      /* ["hi", "ff", "add"].forEach(function (vale, idex) {
         if (vale === "ff") {
-          return;
+          return;                 //act like continue in forEach
         }
         console.log(idex);
         console.log(vale);
@@ -154,8 +145,6 @@
     ob4.method();
     ob4.better();
 */
-
-
     </script>
   </body>
 </html>
